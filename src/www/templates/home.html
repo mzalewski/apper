@@ -1,0 +1,21 @@
+<ion-view view-title="<img src='img/logo.png' />">
+   <ion-content class="post-content has-header">
+		<div class="list">
+      	<div ng-repeat="item in items">
+            <a class="item item-divider tabs-secondary" href="#/wordpress/tag/category/{{post.category.slug}}">
+               {{post.category.title}}
+            </a>
+            <div class="item-wrapper">
+               <a class="item item-image" ng-click="showFullPost($parent.$index,$index);">
+                  <img ng-src="{{item.featured_image_url || globalFunction.getPostImageFeed(item.content) || 'img/photo.png'}}">
+               </a>
+               <a ng-show="item.title" ng-click="showFullPost($parent.$index,$index);" class="item item-title">
+                  <h2>{{ item.title.rendered | decode }}</h2>
+               </a>
+            </div>
+         </div>
+      </div>
+      <ion-spinner ng-show="homePosts" style="text-align:center; width:100%;display:block;"></ion-spinner>
+      
+   </ion-content>
+</ion-view>

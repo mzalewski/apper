@@ -1,0 +1,24 @@
+<ion-view view-title="<img src='img/logo.png' />">
+   <ion-content class="post-content">
+   	<div class="list">
+        	<div class="item item-input-inset">
+            <label class="item-input-wrapper">
+            	<input ng-model="searchQuery.query" type="text" placeholder="Query">
+            </label>
+            <button ng-click="searchSubmitFunction();" class="button button-small">
+            search
+            </button>
+        	</div>
+      	<a ng-repeat="item in posts" ng-show="item.title" class="item item-thumbnail-left" ng-click="showFullPost($index);">
+            <img ng-src="{{item.thumbnail_images.medium.url || globalFunction.getPostImageFeed(item.content) || 'img/photo.png'}}">
+            <h2>{{ item.title }}</h2>
+            <p>{{item.date}}</p>
+      	</a>
+      </div>
+      <ion-infinite-scroll
+       ng-if="postsCompleted == false"
+       on-infinite="getPosts()"
+       distance="10%">
+     </ion-infinite-scroll>
+   </ion-content>
+</ion-view>

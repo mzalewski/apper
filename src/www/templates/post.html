@@ -1,0 +1,40 @@
+<ion-view view-title="<img src='img/logo.png' />">
+  	<ion-content class="post-wp">
+    	  <div class="item-post-title-container" style=" background-size:100%">
+             
+             <img class='item-image' src="{{post.featured_image_url || globalFunction.getPostImageFeed(post.content) || 'img/photo.png'}}" />
+            <div class="item-post-title"><h2 class="post-title">{{post.title.rendered | decode}}</h2>
+            
+                </div>
+         </div>
+        <div class="list card">
+       
+         <div class="item item-body post-content">
+            <div dir ng-bind-html="allContent|hrefToJS">
+            </div>
+         </div>
+         <div class="item tabs tabs-secondary tabs-icon-left">
+            <a ng-click="shareArticle(post.title,post.url);" class="tab-item">
+               <i class="icon ion-share"></i>
+               Share
+            </a>
+         </div>
+         <div class="item item-divider" ng-show="post.tags.length > 0">Tags</div>
+         <div ng-show="post.tags.length > 0" class="item">
+         	<span ng-repeat = "tag in post.tags"><a class="button button-small" href="#/wordpress/tag/tag/{{tag.slug}}">{{tag.title}}</a></span>
+         </div>
+         <div ng-show="viewComments">
+            <div class="item item-divider" ng-show="post.comments.length > 0">comments</div>
+            <div class="list card"  ng-repeat="comment in post.comments" ng-show="post.comments">
+               <div class="item">
+                  <h2 class="post-title">{{comment.name}}</h2>
+               </div>
+               <div class="item item-body">
+                  <div ng-bind-html="comment.content">
+                  </div>
+               </div>
+            </div>
+         </div>
+    	</div>
+  </ion-content>
+</ion-view>

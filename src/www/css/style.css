@@ -1,0 +1,135 @@
+/* importing fonts */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-Italic.ttf");
+  font-style:italic;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../font/SourceSansPro-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-LightItalic.ttf");
+  font-weight: 300;
+  font-style:italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-Bold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-BoldItalic.ttf");
+  font-weight: 600;
+  font-style:italic;
+}
+/* basic css reset */
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .button, input, textarea { 
+	font-family: 'Source Sans Pro', sans-serif; 
+}
+a { 
+	text-decoration: none; 
+}
+img { 
+	max-width: 100%; 
+	height:auto; 
+}
+.button-comment {
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0;
+    margin-top: 0 !important;
+    width: 90% !important;
+}
+.post-wp img{
+	max-width:100%;
+	height:auto;
+	margin:0px !important;
+}
+.post-wp iframe{
+	width:100%;
+	height:350px;
+}
+.post-content, .post-content p{
+	font-size:16px !important;
+}
+.post-content img{
+	max-width:100%;
+	height:auto;
+	margin:0px !important;
+}
+.post-content a{
+	margin:0px !important;
+}
+.left-main i {
+    color: #888;
+    display: block;
+    font-size: 24px !important;
+    text-align: center;
+    width: 32px;
+}
+.bar.bar-transparent {
+    border-color: transparent;
+    background-color: transparent;
+    color: #222;
+}
+/* sidebar profile and image */
+.main-sidebar-profile {
+  background-color: #fff;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  height:200px;
+}
+
+.profile-info {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+  padding-bottom: 20px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  background-image:url(http://1.bp.blogspot.com/-IMsTheNxIqo/VYGjyM2hLiI/AAAAAAAAA1g/ZQO2uRgQSU4/s350-h300-c/cappadocia-805624_1280.jpg);
+  background-repeat:no-repeat;
+}
+.profile-name {
+  color: #fff;
+  font-size: 26px;
+  margin-top:20px;
+}
+#profile-image {
+  display: block;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  width: 128px;
+  height: 128px;
+  margin: 30px auto 0;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+}
+#map {
+  width: 100%;
+  height: 300px;
+}
+.header-item img { max-height:100%; display:none }
+.has-header { top:<%=headerHeight%>px; }
+.bar.bar-header { background:<%=headerBackground%>;height:<%=headerHeight%>px; background-size:100% } 
+.bar.bar-header:before { content: " "; background:black; top:0px;left:0px;right:0px;bottom:0px;position:absolute;display:block;background:black; opacity:0; }
+.bar .title { height:100%; }
+
+.item-wrapper { position:relative; margin:3px; }
+.item-wrapper .image { margin:3px; }
+.item-post-title-container { position:relative;  border-top:6px solid #000000; }
+.item-wrapper .item-title, .item-post-title { border:0px none; color:white; position:absolute;bottom:0px;left:0px;right:0px; padding:17px; display:block;  background:rgba(0,0,0,0.4); color:white; font-size:22px; } 
+.item-post-title { bottom:5px; }
+.item-wrapper .item-title h2, .item-post-title  h2 { color:white; font-size:20px;  font-weight:bold; text-overflow:inherit; white-space:normal; }

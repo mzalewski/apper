@@ -1,0 +1,29 @@
+<ion-view view-title="<img src='img/logo.png' />">
+  	<ion-content class="post-wp">
+    	  <div class="item-post-title-container" style=" background-size:100%">
+             
+             <img class='item-image' src="{{page.featured_image_url || globalFunction.getPostImageFeed(page.content) || 'img/photo.png'}}" />
+            <div class="item-post-title"><h2 class="post-title">{{page.title.rendered | decode}}</h2>
+            
+                </div>
+         </div>
+        <div class="list card">
+       
+         <div class="item item-body post-content">
+            <div dir ng-bind-html="allContent|hrefToJS">
+            </div>
+         </div>
+         <div class="item tabs tabs-secondary tabs-icon-left">
+            <a ng-click="shareArticle(page.title,page.url);" class="tab-item">
+               <i class="icon ion-share"></i>
+               Share
+            </a>
+         </div>
+         <div class="item item-divider" ng-show="page.tags.length > 0">Tags</div>
+         <div ng-show="page.tags.length > 0" class="item">
+         	<span ng-repeat = "tag in page.tags"><a class="button button-small" href="#/wordpress/tag/tag/{{tag.slug}}">{{tag.title}}</a></span>
+         </div>
+       
+    	</div>
+  </ion-content>
+</ion-view>

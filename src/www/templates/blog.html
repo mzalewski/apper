@@ -1,0 +1,32 @@
+<ion-view view-title="<img src='img/logo.png' />">
+   <ion-content class="post-content">
+   	<ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh()">
+     	</ion-refresher>
+		<div class="list card" ng-repeat="item in items">
+        <div class="item">
+          	<a ng-click="showFullPost($index);"><h2>{{item.title.rendered}}</h2></a>
+            <p>{{item.author.name}} - {{item.date}}</p>
+        </div>
+        <div class="item item-image">
+          	<a ng-click="showFullPost($index);"><img ng-src="{{item.thumbnail_images.medium.url || globalFunction.getPostImageFeed(item.content) || 'img/photo.png'}}"></img></a>
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a ng-click="shareArticle(item.title,item.url);" class="tab-item">
+               <i class="icon ion-share"></i>
+               Share
+            </a>
+             <a ng-click="showFullPost($index);" class="tab-item">
+               <i class="icon ion-log-in"></i>
+               Read More
+             </a>
+         </div>
+      </div>
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getPosts()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+   </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view view-title="<img src='img/logo.png' />">
+   <ion-content has-header="true">
+   	<ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh()">
+     	</ion-refresher>
+      <div class="list">
+        <a class="item item-icon-right" ng-repeat="item in items" href="#/wordpress/tag/author/{{item.slug}}">
+          {{item.name}}
+          <i class="icon ion-arrow-right-c"></i>
+        </a>
+      </div>
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getPosts()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+    </ion-content>
+</ion-view>
